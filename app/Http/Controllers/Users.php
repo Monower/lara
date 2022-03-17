@@ -10,4 +10,8 @@ class Users extends Controller
     {
         return view('users',['name'=>$name]);
     }
+    public function index($name)
+    {
+        return view('users',['name'=>$name]);
+    }
 }
