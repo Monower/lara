@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::view('about','about');
 Route::view('con','contact');
 
-Route::get('users/{name}',[Users::class,'index']);
+Route::get('users',[Users::class,'loadview']);
 
 /* Route::get('user/{name}',function($name){
     return view('users',['name'=>$name]);

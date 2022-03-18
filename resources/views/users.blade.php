@@ -1,2 +1,17 @@
-<x-header data="users component header" />
-<h1>Hello {{$name}}</h1>
+<h1>users page</h1>
+
+<!-- @if($user =="sadaf")
+    <h2>hello {{$user}}</h2>
+@elseif($user== 'sam')
+    <h2>hello {{$user}}</h2>
+@else 
+    <h2>Hello unknown</h2>
+@endif -->
+
+<!-- @for($i=0;$i<10;$i++)
+    {{$i}} </br>
+@endfor -->
+
+@foreach($user as $users=>$val)
+    [{{$users}}]={{$val}} </br>
+@endforeach

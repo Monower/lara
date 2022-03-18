@@ -6,12 +6,9 @@ use Illuminate\Http\Request;
 
 class Users extends Controller
 {
-    public function loadview($name)
+    public function loadview()
     {
-        return view('users',['name'=>$name]);
+        return view('users',['user'=>['anil','peter','bruce','loki']]);
     }
-    public function index($name)
-    {
-        return view('users',['name'=>$name]);
-    }
+
 }
