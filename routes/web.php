@@ -27,10 +27,13 @@ Route::get('/', function () {
 Route::view('about','about');
 Route::view('con','contact');
 
-Route::get('users',[Users::class,'loadview']);
+/* Route::get('users',[Users::class,'loadview']); */
 
 /* Route::get('user/{name}',function($name){
     return view('users',['name'=>$name]);
 }); */
 
 Route::get('user/{name}',[Users::class,'loadview']);
+
+Route::POST('users',[Users::class,'getdata']);
+Route::view('login','users');

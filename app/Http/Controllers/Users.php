@@ -11,4 +11,9 @@ class Users extends Controller
         return view('users',['user'=>['anil','peter','bruce','loki']]);
     }
 
+    public function getdata(Request $r)
+    {
+        return $r->input();
+    }
+
 }
