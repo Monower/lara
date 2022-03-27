@@ -23,12 +23,15 @@
     let data=@json($user);
     console.log(data);
 </script>
---}}
+
 
 <h1>User Login</h1>
+{{$errors}}
 <form action="users" method="POST">
     @csrf
     <input type="text" name="username" placeholder="Please enter user id"><br><br>
     <input type="password" name="userpassword" placeholder="Enter user password"><br><br>
     <button type="submit">Login</button>
-</form>
+</form> --}}
+
+<h3>this is the users page</h3>

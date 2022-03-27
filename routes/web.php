@@ -37,3 +37,4 @@ Route::get('user/{name}',[Users::class,'loadview']);
 
 Route::POST('users',[Users::class,'getdata']);
 Route::view('login','users');
+Route::view('noaccess','noaccess');
