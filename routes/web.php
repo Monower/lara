@@ -36,5 +36,6 @@ Route::view('con','contact');
 Route::get('user/{name}',[Users::class,'loadview']);
 
 Route::POST('users',[Users::class,'getdata']);
-Route::view('login','users');
+Route::view('login','users')->middleware('protec');
+Route::view('home','home');
 Route::view('noaccess','noaccess');
