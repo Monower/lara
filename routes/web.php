@@ -33,9 +33,10 @@ Route::view('con','contact');
     return view('users',['name'=>$name]);
 }); */
 
-Route::get('user/{name}',[Users::class,'loadview']);
+/* Route::get('user/{name}',[Users::class,'loadview']); */
 
-Route::POST('users',[Users::class,'getdata']);
+/* Route::POST('users',[Users::class,'getdata']); */
 Route::view('login','users')->middleware('protec');
 Route::view('home','home');
 Route::view('noaccess','noaccess');
+Route::get('users',[Users::class,'index']);
