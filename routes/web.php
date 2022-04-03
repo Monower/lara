@@ -39,4 +39,6 @@ Route::view('con','contact');
 Route::view('login','users')->middleware('protec');
 Route::view('home','home');
 Route::view('noaccess','noaccess');
-Route::get('users',[Users::class,'index']);
+/* Route::get('users',[Users::class,'index']); */
+
+Route::get('users',[Users::class,'getapi']);

@@ -34,4 +34,22 @@
     <button type="submit">Login</button>
 </form> --}}
 
-<h3>this is the users page</h3>
+{{--<h3>this is the users page</h3>--}}
+
+<h1>User List</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Profile Photo</td>
+    </tr>
+    @foreach ($data as $a)
+        <tr>
+            <td>{{$a['id']}}</td>
+            <td>{{$a['first_name']}}</td>
+            <td>{{$a['email']}}</td>
+            <td><img src={{$a['avatar']}} alt="image"></td>
+        </tr>
+    @endforeach
+</table>
