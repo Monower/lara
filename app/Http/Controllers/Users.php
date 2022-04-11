@@ -27,10 +27,28 @@ class Users extends Controller
         return User::all();
     } */
 
-    function getapi(){
+/*     function getapi(){
         $data=Http::get('https://reqres.in/api/users?page=1');
 
         return view('users',['data'=>$data['data']]);
+    } */
+
+
+
+
+/*     function test_req(Request $r){
+        return $r->input();
+    } */
+
+    function userlog(Request $r){
+        $data= $r->input();
+
+        $r->session()->put('user',$data['user']);
+
+        return redirect('profile');
+
+
+
     }
 
 }

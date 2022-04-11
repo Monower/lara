@@ -36,9 +36,32 @@ Route::view('con','contact');
 /* Route::get('user/{name}',[Users::class,'loadview']); */
 
 /* Route::POST('users',[Users::class,'getdata']); */
-Route::view('login','users')->middleware('protec');
+/* Route::view('login','users')->middleware('protec'); */
 Route::view('home','home');
 Route::view('noaccess','noaccess');
 /* Route::get('users',[Users::class,'index']); */
 
-Route::get('users',[Users::class,'getapi']);
+/* Route::get('users',[Users::class,'getapi']); */
+
+/* Route::view('login','users'); */
+/* Route::post('users',[Users::class,'test_req']); */
+
+/* Route::view('login','login'); */
+Route::post('user',[Users::class,'userlog']);
+Route::view('profile','profile');
+
+Route::get('/login', function () {
+    if(session()->has('user')){
+        return redirect('profile');
+
+    }
+    return view('login');
+});
+
+Route::get('/logout', function () {
+    if(session()->has('user')){
+        session()->pull('user');
+    }
+
+    return redirect('login');
+});

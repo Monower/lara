@@ -36,7 +36,7 @@
 
 {{--<h3>this is the users page</h3>--}}
 
-<h1>User List</h1>
+{{-- <h1>User List</h1>
 <table border="1">
     <tr>
         <td>ID</td>
@@ -52,4 +52,13 @@
             <td><img src={{$a['avatar']}} alt="image"></td>
         </tr>
     @endforeach
-</table>
+</table> --}}
+
+<h1>User login</h1>
+
+<form action="users" method="POST">
+    @csrf
+    <input type="text" name="user" placeholder="enter name"> <br>
+    <input type="password" name="pass" placeholder="enter password"> <br>
+    <button type="submit">Login</button>
+</form>
