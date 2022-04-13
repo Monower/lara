@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\Upload;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,6 @@ Route::get('/logout', function () {
 
     return redirect('login');
 });
+
+Route::view('upload', 'upload');
+Route::post('upload',[Upload::class,'index']);
