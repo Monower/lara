@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\Upload;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,3 +70,5 @@ Route::get('/logout', function () {
 
 Route::view('upload', 'upload');
 Route::post('upload',[Upload::class,'index']);
+
+Route::get('list', [MemberController::class,'show']);
