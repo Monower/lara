@@ -72,3 +72,6 @@ Route::view('upload', 'upload');
 Route::post('upload',[Upload::class,'index']);
 
 Route::get('list', [MemberController::class,'show']);
+
+Route::view('add', 'addmember');
+Route::post('add',[MemberController::class,'addData']);

@@ -12,4 +12,14 @@ class MemberController extends Controller
         $data= Member::all();
         return view('list',['members'=>$data]);
     }
+
+    function addData(Request $r){
+        $member= new Member;
+        $member->name=$r->name;
+        $member->email=$r->email;
+        $member->address=$r->address;
+        $member->save();
+
+        return redirect('add');
+    }
 }
