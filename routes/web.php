@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\Upload;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\Member;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +79,5 @@ Route::post('add',[MemberController::class,'addData']);
 Route::get('del/{id}',[MemberController::class,'del']);
 Route::get('edit/{id}',[MemberController::class,'edit']);
 Route::post('editdata',[MemberController::class,'update']);
+
+Route::get('list2',[Member::class,'dbOp']);
