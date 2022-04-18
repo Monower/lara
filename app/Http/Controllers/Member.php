@@ -13,7 +13,7 @@ class Member extends Controller
 
         //return DB::update('update members set address=? where id=?', ['dhaka',9]);
 
-       return DB::delete('delete from members where id=?', [11]);
+        return DB::delete('delete from members where id=?', [11]);
 
         
     }
