@@ -25,3 +25,5 @@ Route::get("data",[dummyApi::class,'getData']);
 Route::get('list',[DeviceController::class,'list']);
 
 Route::post('add',[DeviceController::class,'add']);
+
+Route::put('update',[DeviceController::class,'update']);
