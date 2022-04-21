@@ -40,4 +40,21 @@ class DeviceController extends Controller
             return ['result'=>'data is not updated'];
         }
     }
+
+    function delete($id){
+
+        $device=Device::find($id);
+        $res=$device->delete();
+
+        if($res){
+            return ['result'=>'record deleted'];
+        }else{
+            return ['result'=>'record is not deleted'];
+        }
+        
+    }
+
+    function search($name){
+        return Device::where('name','like','%'.$name.'%')->get();
+    }
 }
