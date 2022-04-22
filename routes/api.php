@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dummyApi;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::delete('delete/{id}', [DeviceController::class,'delete']);
 Route::get('search/{name}',[DeviceController::class,'search']);
 
 Route::post('save',[DeviceController::class,'testData']);
+
+Route::post('login',[UserController::class,'index']);
