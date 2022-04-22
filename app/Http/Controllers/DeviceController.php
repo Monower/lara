@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
-
+use Validator;
 class DeviceController extends Controller
 {
     function list(){
@@ -56,5 +56,28 @@ class DeviceController extends Controller
 
     function search($name){
         return Device::where('name','like','%'.$name.'%')->get();
+    }
+
+    function testData(Request $r){
+
+        $rules=array(
+            'member_id'=>'required|min:1|max:4'
+        );
+        $validator=Validator::make($r->all(),$rules);
+        if($validator->fails()){
+            return response()->json($validator->errors(),401);
+        }else{
+            $device=new Device;
+            $device->name=$r->name;
+            $device->member_id=$r->member_id;
+            $res=$device->save();
+    
+            if($res){
+                return ["Result"=>"Data Has been Saved"];
+            }else{
+                return ["Result"=>"Data Did not insert"];
+            }
+        }
+        
     }
 }
