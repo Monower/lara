@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dummyApi;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::get('search/{name}',[DeviceController::class,'search']);
 Route::post('save',[DeviceController::class,'testData']);
 
 Route::post('login',[UserController::class,'index']);
+
+Route::post('upload',[FileController::class,'upload']);
