@@ -5,6 +5,8 @@ use App\Http\Controllers\Users;
 use App\Http\Controllers\Upload;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\Member;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\UploadFile;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,8 +71,6 @@ Route::get('/logout', function () {
     return redirect('login');
 });
 
-Route::view('upload', 'upload');
-Route::post('upload',[Upload::class,'index']);
 
 Route::get('list', [MemberController::class,'show']);
 
@@ -81,3 +81,8 @@ Route::get('edit/{id}',[MemberController::class,'edit']);
 Route::post('editdata',[MemberController::class,'update']);
 
 Route::get('list2',[Member::class,'dbOp']);
+
+Route::get('sendmail',[EmailController::class,'sendEmail']);
+
+Route::view('file','file');
+Route::post('fileupload',[UploadFile::class,'upload'])->name('file');
