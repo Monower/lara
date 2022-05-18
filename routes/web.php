@@ -86,3 +86,5 @@ Route::get('sendmail',[EmailController::class,'sendEmail']);
 
 Route::view('file','file');
 Route::post('fileupload',[UploadFile::class,'upload'])->name('file');
+
+Route::get('file/download',[UploadFile::class,'download'])->name('filedown');

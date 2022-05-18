@@ -30,4 +30,9 @@ class UploadFile extends Controller
         return redirect()->back();
 
     }
+
+    public function download(){
+        $pathToFile=public_path().'/images/1652855127-sadaf.jpg';
+        return response()->download($pathToFile);
+    }
 }

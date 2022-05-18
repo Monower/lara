@@ -13,3 +13,5 @@
     <button type="submit">submit</button>
 
 </form>
+
+<a href="{{route('filedown')}}">Download</a>
